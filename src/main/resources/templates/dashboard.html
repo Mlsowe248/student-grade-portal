@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .dashboard-box {
+            background: white;
+            padding: 30px 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2d6cdf;
+            text-decoration: none;
+        }
+        .logout-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard-box">
+    <h2>Welcome, <span th:text="${student.name}"></span>!</h2>
+    <table>
+        <tr><td>Physics</td><td th:text="${student.physics}"></td></tr>
+        <tr><td>French</td><td th:text="${student.french}"></td></tr>
+        <tr><td>Programming</td><td th:text="${student.programming}"></td></tr>
+        <tr><td>Computer Architecture</td><td th:text="${student.computerArchitecture}"></td></tr>
+        <tr><td>Database</td><td th:text="${student.database}"></td></tr>
+        <tr><td>Networking</td><td th:text="${student.networking}"></td></tr>
+        <tr><td><strong>GPA</strong></td><td th:text="${#numbers.formatDecimal(student.gpa, 1, 1)}"></td></tr>
+    </table>
+    <a href="/" class="logout-btn">Logout</a>
+</div>
+</body>
+</html>
