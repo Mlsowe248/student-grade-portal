@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Student Portal Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: cornflowerblue;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,11 +19,13 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             text-align: center;
+
         }
         input {
             padding: 10px;
             width: 200px;
             margin: 10px 0;
+            font-style: italic;
         }
         button {
             padding: 10px 20px;
@@ -47,11 +50,12 @@
 <div class="login-box">
     <h2>Student Portal Login</h2>
     <form th:action="@{/login}" method="post">
-        <input type="text" name="matNo" placeholder="Enter Matric Number" required /><br/>
+        <input type="text" name="matNo" placeholder="Enter Your Matric Number" required /><br/>
         <button type="submit">Login</button>
     </form>
     <div class="error-box" th:if="${error}">
         ⚠️ <span th:text="${error}"></span>
+
     </div>
 </div>
 </body>

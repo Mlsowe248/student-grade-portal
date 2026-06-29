@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: cornflowerblue;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -46,11 +46,23 @@
         .logout-btn:hover {
             background-color: #c0392b;
         }
+        input {
+            padding: 12px;
+            width: 100%;
+            max-width: 250px;
+            margin: 10px 0;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
 <div class="dashboard-box">
-    <h2>Welcome, <span th:text="${student.name}"></span>!</h2>
+    <h2>Welcome, <spcan th:text="${student.name}"></spcan>!</h2>
     <table>
         <tr><td>Physics</td><td th:text="${student.physics}"></td></tr>
         <tr><td>French</td><td th:text="${student.french}"></td></tr>
