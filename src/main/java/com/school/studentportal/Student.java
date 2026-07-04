@@ -99,9 +99,9 @@ public class Student {
         else return "F";
     }
     public String getGradeColor(int score){
-        if (score >= 80) return "grade-high";
-        else if (score >= 60) return "grade-mid";
-        else return "grade-low";
+        if (score >= 80) return  "#27ae60";
+        else if (score >= 60) return "#f39c12";
+        else return "#e74c3c";
     }
 
     public double getGpa() {
