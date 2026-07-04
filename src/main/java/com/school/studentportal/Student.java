@@ -90,6 +90,20 @@ public class Student {
     public void setNetworking(int networking) {
         this.networking = networking;
     }
+
+    public String getLetterGrade(int score){
+        if (score >= 90) return "A";
+        else if (score >= 80) return "B";
+        else if(score >= 70) return "C";
+        else if(score >= 60) return "D";
+        else return "F";
+    }
+    public String getGradeColor(int score){
+        if (score >= 80) return "grade-high";
+        else if (score >= 60) return "grade-mid";
+        else return "grade-low";
+    }
+
     public double getGpa() {
         int[] grades = { physics, french, programming, computerArchitecture, database, networking };
 

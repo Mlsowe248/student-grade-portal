@@ -59,19 +59,58 @@
             padding: 12px 24px;
             font-size: 16px;
         }
+        .grade-high { color: #27ae60; font-weight: bold; }
+        .grade-mid  { color: #f39c12; font-weight: bold; }
+        .grade-low  { color: #e74c3c; font-weight: bold; }
+
     </style>
 </head>
 <body>
 <div class="dashboard-box">
     <h2>Welcome, <spcan th:text="${student.name}"></spcan>!</h2>
     <table>
-        <tr><td>Physics</td><td th:text="${student.physics}"></td></tr>
-        <tr><td>French</td><td th:text="${student.french}"></td></tr>
-        <tr><td>Programming</td><td th:text="${student.programming}"></td></tr>
-        <tr><td>Computer Architecture</td><td th:text="${student.computerArchitecture}"></td></tr>
-        <tr><td>Database</td><td th:text="${student.database}"></td></tr>
-        <tr><td>Networking</td><td th:text="${student.networking}"></td></tr>
-        <tr><td><strong>GPA</strong></td><td th:text="${#numbers.formatDecimal(student.gpa, 1, 1)}"></td></tr>
+        <tr>
+            <td>Physics</td>
+            <td th:class="${student.gradeColor(student.physics)}"
+                th:text="${student.physics}"></td>
+            <td th:text="${student.letterGrade(student.physics)}"></td>
+        </tr>
+        <tr>
+            <td>French</td>
+            <td th:class="${student.gradeColor(student.french)}"
+                th:text="${student.french}"></td>
+            <td th:text="${student.letterGrade(student.french)}"></td>
+        </tr>
+        <tr>
+            <td>Programming</td>
+            <td th:class="${student.gradeColor(student.programming)}"
+                th:text="${student.programming}"></td>
+            <td th:text="${student.letterGrade(student.programming)}"></td>
+        </tr>
+        <tr>
+            <td>Computer Architecture</td>
+            <td th:class="${student.gradeColor(student.computerArchitecture)}"
+                th:text="${student.computerArchitecture}"></td>
+            <td th:text="${student.letterGrade(student.computerArchitecture)}"></td>
+        </tr>
+        <tr>
+            <td>Database</td>
+            <td th:class="${student.gradeColor(student.database)}"
+                th:text="${student.database}"></td>
+            <td th:text="${student.letterGrade(student.database)}"></td>
+        </tr>
+        <tr>
+            <td>Networking</td>
+            <td th:class="${student.gradeColor(student.networking)}"
+                th:text="${student.networking}"></td>
+            <td th:text="${student.letterGrade(student.networking)}"></td>
+        </tr>
+        <tr>
+            <td><strong>GPA</strong></td>
+            <td colspan="2">
+                <strong th:text="${#numbers.formatDecimal(student.gpa, 1, 1)}"></strong>
+            </td>
+        </tr>
     </table>
     <a href="/" class="logout-btn">Logout</a>
 </div>
