@@ -71,39 +71,39 @@
     <table>
         <tr>
             <td>Physics</td>
-            <td th:style="${student.gradeColor(student.physics)}"
+            <td th:style="'color:' + ${student.physicsColor} + '; font-weight: bold;'"
                 th:text="${student.physics}"></td>
-            <td th:text="${student.letterGrade(student.physics)}"></td>
+            <td th:text="${student.physicsLetter}"></td>
         </tr>
         <tr>
             <td>French</td>
-            <td th:style="${student.gradeColor(student.french)}"
+            <td th:style="'color:' + ${student.frenchColor} + '; font-weight: bold;'"
                 th:text="${student.french}"></td>
-            <td th:text="${student.letterGrade(student.french)}"></td>
+            <td th:text="${student.frenchLetter}"></td>
         </tr>
         <tr>
             <td>Programming</td>
-            <td th:style="${student.gradeColor(student.programming)}"
+            <td th:style="'color:' + ${student.programmingColor} + '; font-weight: bold;'"
                 th:text="${student.programming}"></td>
-            <td th:text="${student.letterGrade(student.programming)}"></td>
+            <td th:text="${student.programmingLetter}"></td>
         </tr>
         <tr>
             <td>Computer Architecture</td>
-            <td th:style="${student.gradeColor(student.computerArchitecture)}"
+            <td th:style="'color:' + ${student.computerArchitectureColor} + '; font-weight: bold;'"
                 th:text="${student.computerArchitecture}"></td>
-            <td th:text="${student.letterGrade(student.computerArchitecture)}"></td>
+            <td th:text="${student.computerArchitectureLetter}"></td>
         </tr>
         <tr>
             <td>Database</td>
-            <td th:style="${student.gradeColor(student.database)}"
+            <td th:style="'color:' + ${student.databaseColor} + '; font-weight: bold;'"
                 th:text="${student.database}"></td>
-            <td th:text="${student.letterGrade(student.database)}"></td>
+            <td th:text="${student.databaseLetter}"></td>
         </tr>
         <tr>
             <td>Networking</td>
-            <td th:style="${student.gradeColor(student.networking)}"
+            <td th:style="'color:' + ${student.networkingColor} + '; font-weight: bold;'"
                 th:text="${student.networking}"></td>
-            <td th:text="${student.letterGrade(student.networking)}"></td>
+            <td th:text="${student.networkingLetter}"></td>
         </tr>
         <tr>
             <td><strong>GPA</strong></td>

@@ -10,9 +10,7 @@ public class Student {
 
     @Id
     private String matNo;
-
     private String name;
-
     private int physics;
     private int french;
     private int programming;
@@ -35,78 +33,34 @@ public class Student {
         this.networking = networking;
     }
 
-    public String getMatNo() {
-        return matNo;
-    }
-    public void setMatNo(String matNo) {
-        this.matNo = matNo;
-    }
+    // Getters and Setters
+    public String getMatNo() { return matNo; }
+    public void setMatNo(String matNo) { this.matNo = matNo; }
 
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public int getPhysics() {
-        return physics;
-    }
-    public void setPhysics(int physics) {
-        this.physics = physics;
-    }
+    public int getPhysics() { return physics; }
+    public void setPhysics(int physics) { this.physics = physics; }
 
-    public int getFrench() {
-        return french;
-    }
-    public void setFrench(int french) {
-        this.french = french;
-    }
+    public int getFrench() { return french; }
+    public void setFrench(int french) { this.french = french; }
 
-    public int getProgramming() {
-        return programming;
-    }
-    public void setProgramming(int programming) {
-        this.programming = programming;
-    }
+    public int getProgramming() { return programming; }
+    public void setProgramming(int programming) { this.programming = programming; }
 
-    public int getComputerArchitecture() {
-        return computerArchitecture;
-    }
-    public void setComputerArchitecture(int computerArchitecture) {
-        this.computerArchitecture = computerArchitecture;
-    }
+    public int getComputerArchitecture() { return computerArchitecture; }
+    public void setComputerArchitecture(int computerArchitecture) { this.computerArchitecture = computerArchitecture; }
 
-    public int getDatabase() {
-        return database;
-    }
-    public void setDatabase(int database) {
-        this.database = database;
-    }
+    public int getDatabase() { return database; }
+    public void setDatabase(int database) { this.database = database; }
 
-    public int getNetworking() {
-        return networking;
-    }
-    public void setNetworking(int networking) {
-        this.networking = networking;
-    }
+    public int getNetworking() { return networking; }
+    public void setNetworking(int networking) { this.networking = networking; }
 
-    public String getLetterGrade(int score){
-        if (score >= 90) return "A";
-        else if (score >= 80) return "B";
-        else if(score >= 70) return "C";
-        else if(score >= 60) return "D";
-        else return "F";
-    }
-    public String getGradeColor(int score){
-        if (score >= 80) return  "#27ae60";
-        else if (score >= 60) return "#f39c12";
-        else return "#e74c3c";
-    }
-
+    // GPA calculation
     public double getGpa() {
         int[] grades = { physics, french, programming, computerArchitecture, database, networking };
-
         double total = 0;
         for (int grade : grades) {
             total += grade;
@@ -124,5 +78,68 @@ public class Student {
         } else {
             return 0.0;
         }
+    }
+
+    // Physics
+    public String getPhysicsColor() {
+        return getGradeColor(physics);
+    }
+    public String getPhysicsLetter() {
+        return getLetterGrade(physics);
+    }
+
+    // French
+    public String getFrenchColor() {
+        return getGradeColor(french);
+    }
+    public String getFrenchLetter() {
+        return getLetterGrade(french);
+    }
+
+    // Programming
+    public String getProgrammingColor() {
+        return getGradeColor(programming);
+    }
+    public String getProgrammingLetter() {
+        return getLetterGrade(programming);
+    }
+
+    // Computer Architecture
+    public String getComputerArchitectureColor() {
+        return getGradeColor(computerArchitecture);
+    }
+    public String getComputerArchitectureLetter() {
+        return getLetterGrade(computerArchitecture);
+    }
+
+    // Database
+    public String getDatabaseColor() {
+        return getGradeColor(database);
+    }
+    public String getDatabaseLetter() {
+        return getLetterGrade(database);
+    }
+
+    // Networking
+    public String getNetworkingColor() {
+        return getGradeColor(networking);
+    }
+    public String getNetworkingLetter() {
+        return getLetterGrade(networking);
+    }
+
+    // Helper methods
+    private String getGradeColor(int score) {
+        if (score >= 80) return "#27ae60";      // green
+        else if (score >= 60) return "#f39c12"; // orange
+        else return "#e74c3c";                   // red
+    }
+
+    private String getLetterGrade(int score) {
+        if (score >= 90) return "A";
+        else if (score >= 80) return "B";
+        else if (score >= 70) return "C";
+        else if (score >= 60) return "D";
+        else return "F";
     }
 }
