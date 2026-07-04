@@ -1,5 +1,6 @@
 package com.school.studentportal;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -9,6 +10,8 @@ import jakarta.persistence.Table;
 public class Student {
 
     @Id
+    @Column(nullable = false)
+    private String password;
     private String matNo;
     private String name;
     private int physics;
@@ -21,10 +24,12 @@ public class Student {
     public Student() {
     }
 
-    public Student(String matNo, String name, int physics, int french, int programming,
+    public Student(String matNo, String name,String password, int physics, int french, int programming,
                    int computerArchitecture, int database, int networking) {
         this.matNo = matNo;
         this.name = name;
+        this.password = password;
+
         this.physics = physics;
         this.french = french;
         this.programming = programming;
@@ -57,6 +62,13 @@ public class Student {
 
     public int getNetworking() { return networking; }
     public void setNetworking(int networking) { this.networking = networking; }
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     // GPA calculation
     public double getGpa() {

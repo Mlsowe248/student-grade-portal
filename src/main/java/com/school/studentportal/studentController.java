@@ -20,19 +20,26 @@ public class studentController {
     public String loginPage() {
         return "login";
     }
-
-    // Handle login form submission
     @PostMapping("/login")
-    public String login(@RequestParam String matNo, Model model) {
+    public String login(@RequestParam String matNo, @RequestParam String password, Model model) {
         Optional<Student> studentOpt = studentRepository.findById(matNo);
 
         if (studentOpt.isPresent()) {
             Student student = studentOpt.get();
-            model.addAttribute("student", student);
-            return "dashboard";
+            // Check if password matches
+            if (student.getPassword().equals(password)) {
+                model.addAttribute("student", student);
+                return "dashboard";
+            } else {
+                model.addAttribute("error", "Invalid Password");
+                return "login";
+            }
         } else {
             model.addAttribute("error", "Invalid Matric Number");
             return "login";
         }
     }
+
+    // Handle login form submission
+
 }
